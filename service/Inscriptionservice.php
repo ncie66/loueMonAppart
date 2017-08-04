@@ -2,7 +2,7 @@
 include "../model/fonction.php";
 $username = $_POST['nom'];
 $password = $_POST['password'];
-$mail = $_POST['mail'];
+
 $flag = true;
 $flag2 = true;
 $flag3 = false;

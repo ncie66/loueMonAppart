@@ -16,7 +16,7 @@
 <h2> S'inscrire ! </h1>
 
 
-   <form method="post" action="service/Inscriptionservice.php">
+   <form method="post" action="Inscriptionservice.php">
             <label>username </label>
             <input  type="text" name="nom"><br><br>
 

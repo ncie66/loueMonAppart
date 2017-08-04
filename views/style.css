@@ -2,8 +2,6 @@ body{
     background-color: #81DAF5;
 	margin: 0px;
     font-family: 'Open Sans', sans-serif;
-    width: 100%;
-    height: 100%;
 }
 header{
     width: 100%;
@@ -20,20 +18,27 @@ hr{ height:30px;
   animation-iteration-count: infinite;
 }
 
+#un{
+    width: 100%;
+    height: auto;
+    min-height: 50px;
+}
 ul{
+    width: 100%;
+    height: auto;
  padding:0;
  margin:0;
  list-style-type:none;
 }
 li{
- float:left; /*pour IE*/
+    width: 100%;
+    height: auto;
  border-left:1px solid black;
 }
 ul li a {
  display:flex;
- justify-content: center;
- float:left;   
- width:1450px;
+ justify-content: center; 
+ width:100%;
  line-height:25px; /*hauteur de l'image de fond*/
  background:black url(images/noir-1.png) repeat-x;
  color:lightsteelblue;
