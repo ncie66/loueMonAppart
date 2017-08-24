@@ -39,7 +39,8 @@ Flight::route('/appluxe', function(){
 });
 
 Flight::route('/decoservice', function(){
-    Flight::render('Acceuil');
+    $deco=new decoservice();
+    $deco->deco();
 });
 
 Flight::route('POST /Loginservice', function(){

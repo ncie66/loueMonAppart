@@ -20,10 +20,9 @@
     </ul>
 </div>
 
-<div class="haha">
 M²: 36<br>
 Piece: 1<br>
-Prix loyer: 500<br>
+Prix loyer: 380<br>
 Reference: REF20168895<br>
 Description: Appartement style contemporain<br>
 <img width="400" height="250" src="images/studio.jpg" style="" ><br> <input type="submit" value="Reserver" /><br><br>
@@ -31,17 +30,17 @@ Description: Appartement style contemporain<br>
 
 M²: 36<br>
 Piece: 1<br>
-Prix loyer: 580<br>
+Prix loyer: 410<br>
 Reference: REF20168895<br>
 Description: Appartement style contemporain<br>
 <img width="400" height="250" class="photo" src="images/studio2.jpg"><br> <input type="submit" value="Reserver" /><br><br>
 
 M²: 36<br>
 Piece: 1<br>
-Prix loyer: 650<br>
+Prix loyer: 450<br>
 Reference: REF20168895<br>
 Description: Appartement style contemporain<br>
 <img width="400" height="250" class="photo" src="images/studio3.jpg"><br> <input type="submit" value="Reserver" /><br><br>
-</div>
+
 </body>
 </html>

@@ -8,15 +8,15 @@ header{
     height: 100%;
 }
 hr{
-height: 0px;
-border: 0px none;
-border-top: 5px #272745 dashed;
-background: #2121cf repeat-x center center;
+    height: 0px;
+    border: 0px none;
+    border-top: 5px #272745 dashed;
+    background: #2121cf repeat-x center center;
 }
 .allo {
-  animation-duration: 3s;
-  animation-name: fadeIn;
-  animation-iteration-count: infinite;
+    animation-duration: 3s;
+    animation-name: fadeIn;
+    animation-iteration-count: infinite;
 }
 .taille {
     height:15px;
@@ -30,27 +30,29 @@ background: #2121cf repeat-x center center;
 ul{
     width: 100%;
     height: auto;
- padding:0;
- margin:0;
- list-style-type:none;
+    padding:0;
+    margin:0;
+    list-style-type:none;
 }
 li{
     width: 100%;
     height: auto;
 }
 ul li a {
- display:flex;
- justify-content: center; 
- width:100%;
- line-height:25px; /*hauteur de l'image de fond*/
- background:black url(images/noir-1.png) repeat-x;
- color:lightsteelblue;
- text-decoration:none;
- text-align:center;
+
+    display:flex;
+    justify-content: center; 
+    width:100%;
+    line-height:25px; /*hauteur de l'image de fond*/
+    background:black url(images/noir-1.png) repeat-x;
+    color:lightsteelblue;
+    text-decoration:none;
+    text-align:center;
+
 }
 ul li a:hover {
- background:black url(images/noir-2.png) repeat-x;
- color:white;
+    background:black url(images/noir-2.png) repeat-x;
+    color:white;
 }
 
 .cat{
@@ -63,7 +65,32 @@ ul li a:hover {
 }
 
 .cat2{
-
     float: right;
 }
+#decobout{
+    flex: flex;
+    border-radius:20px 0 20px 0;
+	background: #05353b;
+	border:none;
+	color: white;
+	font:bold 20px Verdana;
+	padding:6px 12px 0px 6px;
+}
+.connect{
+    position:absolute;
+    top:50%;
+    left:43%; 
+    height:200px;
+    margin-left:-150px; 
+    margin-top:-100px; 
 
+}
+.inscri{
+    position:absolute;
+    top:50%;
+    left:50%; 
+    height:200px;
+    margin-left:-150px; 
+    margin-top:-100px; 
+
+}

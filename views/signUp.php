@@ -11,6 +11,7 @@
 
 <h1><div class="allo"><center> Bienvenue sur MonFuturAppart ! </center><div></h1>
 
+<div class="inscri">
 <h2>Inscription </h1>
 
 
@@ -27,6 +28,6 @@
         <input type="submit" class="Envoyer" value="S'inscrire">
         <a href="signIn">Sign In</a>
     </form> 
-
+</div>
 </body>
 </html>

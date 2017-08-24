@@ -20,12 +20,13 @@
     </ul>
 </div>
 
-<form action="decoservice" method="post">
+<form action="decoservice" method="post"><br>
 
-    <input type="submit" class="Envoyer" value="Se deconnecter">
+    <input type="submit" class="Envoyer" value="Se deconnecter" id="decobout">
 
 </form>
 <br>
+<center>
 <form action="newsujetservice" method="post">
 <label for="categorie">Catégorie appartement :</label><br>
        <select name="categorie" id="categorie">
@@ -38,7 +39,7 @@
     <label>Description:</label><br/><textarea name="description" rows="10" cols="50"></textarea> <br>
     <input type="submit" value="Envoyer" />
 </form>
-
+</center>
 <?php
 $bdd= new bddmanager;
 $appart=$bdd->getAllAppart();
