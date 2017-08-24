@@ -7,17 +7,21 @@ header{
     width: 100%;
     height: 100%;
 }
-hr{ height:30px; 
-    border:0px none; 
-    border-top:5px blue dashed;
-    background: #f3f3ff repeat-x center center;
+hr{
+height: 0px;
+border: 0px none;
+border-top: 5px #272745 dashed;
+background: #2121cf repeat-x center center;
 }
 .allo {
   animation-duration: 3s;
   animation-name: fadeIn;
   animation-iteration-count: infinite;
 }
-
+.taille {
+    height:15px;
+    width:200px;
+}
 #un{
     width: 100%;
     height: auto;
@@ -33,7 +37,6 @@ ul{
 li{
     width: 100%;
     height: auto;
- border-left:1px solid black;
 }
 ul li a {
  display:flex;
@@ -63,3 +66,4 @@ ul li a:hover {
 
     float: right;
 }
+

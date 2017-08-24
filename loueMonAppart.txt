@@ -18,7 +18,7 @@ contrôleur le framework Flight (ET NON NOTRE ANCIEN INDEX AVEC LE SWITCH).
 en base de données avec le BddManager pour gérer les intéractions avec la base de données.
 Si vous vous sentez à l’aise rajoutez les repository qu’on a vu en cours. Attention n’oubliez pas notre
 hydrateur d’informations pour les entités. Stockez le tout dans le dossier model (comme d’hab).
-Il seranotre librairie.
+Il sera notre librairie.
 
 4) Les fonctions qui n’ont pas d’intéractions avec la base de données irons dans le même dossier.
 Faites des objets. Les fonctions toutes simples c’est fini !! même pour les gets.

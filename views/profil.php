@@ -64,7 +64,7 @@ window.onload=function()
 }
 </script>
 
-<a href="http://localhost:8888/php/projet/index.php?page=forum"> Retourner au forum </a>
+<a href="http://localhost:8888/php/projet/index.php?page=Acceuil"> Retourner axux locations </a>
 
 <form action="service/decoservice.php" >
 

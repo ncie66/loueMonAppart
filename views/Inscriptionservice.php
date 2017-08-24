@@ -1,5 +1,4 @@
 <?php
-include "../model/fonction.php";
 $username = $_POST['nom'];
 $password = $_POST['password'];
 
