@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="views/style.css">
+    
     <title>Connection</title>
 </head>
 <body>
-
+<div style="font-family: 'Permanent Marker', cursive">
 <h1><div class="allo"><center> Bienvenue sur MonFuturAppart ! </center><div></h1>
     <div class="connect">
         <h2>Connecte toi et loue ton futur appart</h1>
@@ -20,10 +21,12 @@
             <label>Password</label>
             <input type="text" name="password"><br><br>
             
-            <input type="submit" class="Envoyer" value="Se connecter">
+            <input type="submit" class="Envoyer" class="decobout" value="Se connecter">
+            <a href="signUp">Inscription</a>
 
         </form> <br>
     </div>
-    <a href="signUp">Inscription</a>
+   
+</div>
 </body>
 </html>

@@ -5,29 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="views/style.css">
+    <link rel="stylesheet" href=".css">
     <title>Inscription</title>
+    
 </head>
 <body>
-
+<div style="font-family: 'Permanent Marker', cursive">
 <h1><div class="allo"><center> Bienvenue sur MonFuturAppart ! </center><div></h1>
 
 <div class="inscri">
-<h2>Inscription </h1>
+<h2>INSCRIPTION </h1>
 
 
    <form method="post" action="Inscriptionservice">
-            <label>username </label>
+            <label>USERNAME </label>
             <input  type="text" name="nom"><br><br>
 
-            <label>password </label>
+            <label>PASSWORD </label>
             <input  type="password" name="password" ><br><br>
 
-             <label>email </label>
+             <label>MAIL </label>
             <input  type="text" name="mail"><br><br>
 
-        <input type="submit" class="Envoyer" value="S'inscrire">
+        <input type="submit" class="Envoyer" class="decobout" value="S'inscrire">
         <a href="signIn">Sign In</a>
     </form> 
+</div>
 </div>
 </body>
 </html>

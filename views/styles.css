@@ -2,10 +2,7 @@ html, body {
     height:100%;
 }
 body{
-    
     background-color: #81DAF5;
-    background-image: url("../images/azer.jpg");  
-    background-position: center;
 	margin: 0px;
     font-family: 'Open Sans', sans-serif;
 }
@@ -33,7 +30,46 @@ hr{
     height: auto;
     min-height: 50px;
 }
+ul{
+    width: 100%;
+    height: auto;
+    padding:0;
+    margin:0;
+    list-style-type:none;
+}
+li{
+    width: 100%;
+    height: auto;
+}
+ul li a {
 
+    display:flex;
+    justify-content: center; 
+    width:100%;
+    line-height:25px; /*hauteur de l'image de fond*/
+    background:black url(images/noir-1.png) repeat-x;
+    color:lightsteelblue;
+    text-decoration:none;
+    text-align:center;
+
+}
+ul li a:hover {
+    background:black url(images/noir-2.png) repeat-x;
+    color:white;
+}
+
+.cat{
+    display: flex;
+    justify-content: space-around;
+}
+
+.cat1{
+    float: left;
+}
+
+.cat2{
+    float: right;
+}
 #decobout{
     flex: flex;
     border-radius:20px 0 20px 0;
@@ -46,7 +82,7 @@ hr{
 .connect{
     position:absolute;
     top:50%;
-    left:50%; 
+    left:43%; 
     height:200px;
     margin-left:-150px; 
     margin-top:-100px; 
@@ -60,8 +96,4 @@ hr{
     margin-left:-150px; 
     margin-top:-100px; 
 
-}
-
-h1, h2{
-    color: white;
 }
