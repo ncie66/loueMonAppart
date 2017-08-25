@@ -21,26 +21,6 @@
         <li><a href="appluxe" > Appartement de Luxe </a></li>
     </ul>
 </div>
-M²: 36<br>
-Piece: 1<br>
-Prix loyer: 500<br>
-Reference: REF20168895<br>
-Description: Appartement style contemporain<br><br>
-<img width="400" height="250" src="images/studio.jpg" style=""><br><br>
-
-M²: 36<br>
-Piece: 1<br>
-Prix loyer: 580<br>
-Reference: REF20168895<br>
-Description: Appartement style contemporain<br><br>
-<img width="400" height="250" class="photo" src="images/studio2.jpg"><br><br>
-
-M²: 36<br>
-Piece: 1<br>
-Prix loyer: 650<br>
-Reference: REF20168895<br>
-Description: Appartement style contemporain<br><br>
-<img width="400" height="250" class="photo" src="images/studio3.jpg"><br><br>
-
+MERCI DE CONTACTER LE SUPPORT POUR TOUTE RESERVATION/ANNULATION
 </body>
 </html>

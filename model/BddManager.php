@@ -5,7 +5,7 @@ class BddManager{
     private $connexion;
 
     public function __construct(){
-
+        $this->getConnexion();
     }
 
         public function getConnexion(){
@@ -20,7 +20,6 @@ class BddManager{
     }
 
     public function getUserById($id){
-        $this->getConnexion();
         $object = $this->connexion->prepare('SELECT * FROM user WHERE id=:id');
         $object->execute(array(
             'id'=>$id
@@ -31,7 +30,6 @@ class BddManager{
     }
 
     public function check_user_login($username, $password){
-        $this->getConnexion();
         $object = $this->connexion->prepare('SELECT * FROM user WHERE username=:username AND password=:password');
         $object->execute(array(
             'username'=>$username,
@@ -49,11 +47,12 @@ class BddManager{
 
     public function save_user($username, $password, $mail){
         $this->getConnexion();
-        $object = $this->connexion->prepare('INSERT INTO user SET username=:username, password=:password, mail=:mail');
+        $object = $this->connexion->prepare('INSERT INTO user SET username=:username, password=:password, mail=:mail, photo=:photo');
         $object->execute(array(
             'username'=>$username,
             'password'=>$password,
-            'mail'=>$mail
+            'mail'=>$mail,
+            'photo'=>'/php/22_legrandfinal/model/uploads/profil.png'
         ));
         $user = $object->fetch(PDO::FETCH_ASSOC);
 
@@ -65,7 +64,6 @@ class BddManager{
         }
     }
     public function save_sujet($user_id, $titre, $description, $categorie){
-        $this->getConnexion();
         $object = $this->connexion->prepare('INSERT INTO appartfinal SET user_id=:user_id, titre=:titre, categorie=:categorie, description=:description');
         $object->execute(array(
             'user_id'=>$user_id,
@@ -83,23 +81,28 @@ class BddManager{
         
             for($i = 0; $i < count($appart); $i++){
                 $var = $appart[$i];
-                echo "<form action='detailService.php?id=".$var['id']."' method='post'>";
+                echo "<form action='detailService/".$var['id']."' method='post'>";
                 echo "categorie:<br>".$var['categorie']."<br><br>";
                 echo "titre:<br>".$var['titre']."<br><br>";
                 echo "description:<br>".$var['description']."<br><br>";
                 echo "<input type='submit' name='action' value='Détails'/>";
-                echo "<input type='submit' name='action' value='Delete'/>";
-                echo "<hr>";
                 echo "</form>";
+                echo "<form action='deleteService/".$var['id']."' method='post'><input type='submit' name='action' value='Delete'/></form>";
+                echo "</form>";
+                echo '<a href="reserved" >
+                        <form method="post" action="reservedservice/'.$var['id'].'">
+                            <input type="submit" value="Reserver">
+                        </form>
+                    </a>';
                 echo "<br>";
+                echo "<hr>";
     
             }
         
     }
 
     public function getAppartById($id){
-        $this->getConnexion();
-        $object = $this->connection->prepare('SELECT *
+        $object = $this->connexion->prepare('SELECT *
         FROM appartfinal WHERE id=:id');
         $object->execute(array(
             'id'=>$id
@@ -113,10 +116,9 @@ class BddManager{
     }
 
     public function getAllAppart(){
-        $this->getConnexion();
-      $object = $this->connexion->prepare('SELECT * FROM appartfinal');
-      $object->execute(array());
-      $appart = $object->fetchAll(PDO::FETCH_ASSOC);
+        $object = $this->connexion->prepare('SELECT * FROM appartfinal');
+        $object->execute(array());
+        $appart = $object->fetchAll(PDO::FETCH_ASSOC);
         if(!empty($appart)){
             $tableauAppart=[];
             foreach($appart as $tableauDonneesAppart){
@@ -127,14 +129,14 @@ class BddManager{
         return false;
     }
 
-    public function saveAppart(Appart $appart){
+    public function saveAppart(Appart $appart){;
         if(empty($appart->getId()) == true ){
           $this->insertAppart($appart);
         }
     }
 
     public function insertAppart(Appart $appart){
-      $query="INSERT INTO appartfinal SET categorie=:categorie, titre=:titre, prix=:prix, description=:description";
+        $query="INSERT INTO appartfinal SET categorie=:categorie, titre=:titre, prix=:prix, description=:description";
         $pdo = $this->connection->prepare($query);
         $pdo->execute(array(
             'categorie'=>$appart->getCategorie(),
@@ -145,8 +147,8 @@ class BddManager{
     }
 
     public function updateAppart(Appart $appart){
-      $query="UPDATE appartfinal SET categorie=:categorie, titre=:titre, prix=:prix, description=:description WHERE id=:id";
-        $pdo = $this->connection->prepare($query);
+        $query="UPDATE appartfinal SET categorie=:categorie, titre=:titre, prix=:prix, description=:description WHERE id=:id";
+        $pdo = $this->connexion->prepare($query);
         $pdo->execute(array(
             'id' =>$appart->getId(),
             'categorie'=>$appart->getCategorie(),
@@ -158,11 +160,55 @@ class BddManager{
 
     public function deleteAppart(Appart $appart){
       $query="DELETE FROM appartfinal WHERE id=:id";
-        $pdo = $this->connection->prepare($query);
+        $pdo = $this->connexion->prepare($query);
         $pdo->execute(array(
             'id' =>$appart->getId()
         ));
         return $pdo->rowCount();
+    }
+
+    public function updateprofil(Users $user){
+        $param=$user->getParam();
+        
+        $query="UPDATE user SET photo=:photo WHERE username=:username";
+        $pdo = $this->connexion->prepare($query);
+        $pdo->execute(array(
+            'photo'=>$param['photo'],
+            'username'=>$param['username'],
+        ));
+        return $pdo->rowCount();
+
+    }
+
+    public function selectuser(users $user){
+        $param=$user->getParam();
+        $object = $this->connexion->prepare('SELECT * FROM user WHERE username=:username');
+        $object->execute(array(
+            'username'=>$param['username']
+        ));
+        $user = $object->fetch(PDO::FETCH_ASSOC);
+
+            return $user;
+    }
+
+    public function deleteannonce($id){
+        $object = $this->connexion->prepare('DELETE FROM appartfinal WHERE id=:id');
+        $object->execute(array(
+            'id'=>$id,
+        ));
+        $user = $object->fetch(PDO::FETCH_ASSOC);
+
+
+    }
+    
+    public function reservedannonce($id, $user){
+        $object = $this->connexion->prepare('UPDATE appartfinal SET locataire_id=:locataire_id WHERE id=:id');
+        $object->execute(array(
+            'id'=>$id,
+            'locataire_id'=>$user
+        ));
+        $success = $object->rowCount();
+        return $success;
     }
 
 }

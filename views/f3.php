@@ -9,7 +9,9 @@
     <title>MFA.com</title>
 </head>
 <body>
-   <h1><center> Bienvenue chez MonFuturAppart </center></h1>
+<hr/>
+       <h1><div class="allo"><center> MonFuturAppart </center><div></h1>
+<hr/><br>
 <div id="un">
     <ul>
         <li><a href="Acceuil" > Acceuil </a></li>

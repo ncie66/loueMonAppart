@@ -4,74 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="view/animate.css">
-    <title>Projet</title>
+    <link rel="stylesheet" href="views/styles.css" />
+    <title>MFA.com</title>
 </head>
 <body>
-
-<header>
-    <ul>
-        <li><a href="forum.php">Home</a></li>
-        <li><a href="#catégories">Catégories</a></li>
-        <li><a href="#tchat">Tchat</a></li>
-    </ul>
-</header>
-
 <hr/>
-       <h1><div class="allo"><center> Bienvenue sur le Forum ! </center><div></h1>
+       <h1><div class="allo"><center> MonFuturAppart </center><div></h1>
 <hr/><br>
+<div id="un">
+  <ul>
+      <li><a href="Acceuil" > Acceuil </a></li>
+      <li><a href="studio" > studio </a></li>
+      <li><a href="f2" > Appartement F2 </a></li>
+      <li><a href="f3" > Appartement F3 </a></li>
+      <li><a href="appluxe" > Appartement de Luxe </a></li>
+  </ul>
+</div>
+
 
 <h2><center>Profil utilisateur </center></h2>
-<img src="imgprofil.jpg" alt="Photo" style="width: 300px; height: 250px; "/><br>
+
+<?php
+
+$user=new users();
+$user->displayprofil();
+
+?>
 
 
-<script>
-if (window.File && window.FileReader && window.FileList && window.Blob) 
-  document.write("<b></b>");
-else
-  document.write('<i>API File non reconnue par ce navigateur.</i>');
-</script> 
-
-<input type="file" id="getimage">
-
-<fieldset><legend>Votre image ici</legend>
-    <div  id="imgstore"></div>
-</fieldset> 
 
 
-<script>
-function imageHandler(e2) 
-{ 
-  var store = document.getElementById('imgstore');
-  store.innerHTML='<img src="' + e2.target.result +'">';
-}
+<form enctype="multipart/form-data" action="updateservice" method="post"><br>
 
-function loadimage(e1)
-{
-  var filename = e1.target.files[0]; 
-  var fr = new FileReader();
-  fr.onload = imageHandler;  
-  fr.readAsDataURL(filename); 
-}
+  <input type="file" name="updateimage">
 
-window.onload=function()
-{
-  var x = document.getElementById("filebrowsed");
-  x.addEventListener('change', readfile, false);
-  var y = document.getElementById("getimage");
-  y.addEventListener('change', loadimage, false);
-}
-</script>
+  <input type="submit" class="Envoyer" id="decobout" value="Enregistrer les parametres">
 
-<a href="http://localhost:8888/php/projet/index.php?page=Acceuil"> Retourner axux locations </a>
+</form><br><br>
 
-<form action="service/decoservice.php" >
 
-   <input type="submit" class="Envoyer" value="Se deconnecter">
+
+
+
+
+
+
+<a href="http://localhost:8888/php/22_legrandfinal/Acceuil"> Retourner axux locations </a><br><br><br><br>
+
+<form action="decoservice" >
+
+   <input type="submit" class="Envoyer" value="Se deconnecter" id="decobout" >
 
 </form>
-
-
 </body>
 </html>

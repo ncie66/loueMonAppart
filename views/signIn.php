@@ -10,8 +10,11 @@
 </head>
 <body>
 <div style="font-family: 'Permanent Marker', cursive">
+
 <h1><div class="allo"><center> Bienvenue sur MonFuturAppart ! </center><div></h1>
+
     <div class="connect">
+
         <h2>Connecte toi et loue ton futur appart</h1>
 
         <form action="Loginservice" method="post" >
@@ -25,6 +28,7 @@
             <a href="signUp">Inscription</a>
 
         </form> <br>
+        
     </div>
    
 </div>

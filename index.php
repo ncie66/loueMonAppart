@@ -37,11 +37,21 @@ Flight::route('/f3', function(){
 Flight::route('/appluxe', function(){
     Flight::render('appluxe');
 });
+Flight::route('/profil', function(){
+    Flight::render('profil');
+});
 
 Flight::route('/decoservice', function(){
     $deco=new decoservice();
     $deco->deco();
 });
+
+
+Flight::route('/reserved', function(){
+    Flight::render('reserved');
+
+});
+
 
 Flight::route('POST /Loginservice', function(){
      $username = $_POST['nom'];
@@ -103,6 +113,59 @@ Flight::route('POST /newsujetservice', function(){
 
 });
 
+Flight::route('POST /updateservice', function(){
+
+        $update=new updateservice();
+
+        $update->addphoto();
+
+        Flight::redirect('Profil');
+       
+   
+});
+
+
+Flight::route('POST /detailservice/@id', function($id){
+
+
+    $bddmanager = new BddManager();
+
+         $bddmanager ->getAppartById($id);
+         Flight::redirect('Acceuil');
+
+});
+
+Flight::route('POST /deleteService/@id', function($id){
+
+    $bddmanager = new BddManager();
+    $bddmanager->deleteannonce($id);
+         Flight::redirect('Acceuil');
+
+});
+
+Flight::route('POST /reservedservice/@id', function($id){
+
+   $bddmanager = new BddManager();
+   $success = $bddmanager ->reservedannonce($id, $_SESSION['user']['id']);
+
+   if($success == 1){
+    Flight::redirect('Acceuil');
+    "<script>javascript: alert('bravo !')></script>";
+   } 
+
+   else{
+    Flight::redirect('studio');
+   }
+    
+
+});
+
 Flight::start();
 
 ?>
+
+?>
+    echo"<script language=\"javascript\">"
+    echo"alert('Cette appartement est déjà reservé')";
+    echo"</script>";
+<?

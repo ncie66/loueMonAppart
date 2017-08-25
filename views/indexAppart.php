@@ -9,7 +9,9 @@
     <title>MFA.com</title>
 </head>
 <body>
-   <h1><center> Bienvenue chez MonFuturAppart </center></h1>
+<hr/>
+       <h1><div class="allo"><center> MonFuturAppart </center><div></h1>
+<hr/><br>
 <div id="un">
     <ul>
         <li><a href="Acceuil" > Acceuil </a></li>
@@ -17,6 +19,7 @@
         <li><a href="f2" > Appartement F2 </a></li>
         <li><a href="f3" > Appartement F3 </a></li>
         <li><a href="appluxe" > Appartement de Luxe </a></li>
+        <li><a href="profil" > Profil utilisateur</a></li>
     </ul>
 </div>
 
