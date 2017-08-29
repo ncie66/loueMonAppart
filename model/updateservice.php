@@ -18,7 +18,7 @@ class Updateservice{
                 $infosfichier = pathinfo($files['name']);
 
                 $extension_upload = $infosfichier['extension'];
-                $extensions_autorisees = array('jpeg', 'gif', 'png');
+                $extensions_autorisees = array('jpeg', 'gif', 'png', 'jpg');
                 if (in_array($extension_upload, $extensions_autorisees))
                 {
                     

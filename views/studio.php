@@ -18,45 +18,35 @@
         <li><a href="studio" > studio </a></li>
         <li><a href="f2" > Appartement F2 </a></li>
         <li><a href="f3" > Appartement F3 </a></li>
-        <li><a href="appluxe" > Appartement de Luxe </a></li>
+        <li><a href="appluxe" > Appartement/Villa </a></li>
+        <li><a href="profil" > Profil utilisateur</a></li>
     </ul>
 </div>
 
 M²: 36<br>
 Piece: 1<br>
 Prix loyer: 380<br>
-Reference: REF20168895<br>
+REF20168895<br>
 Description: Appartement style contemporain<br>
-<img width="400" height="250" src="images/studio.jpg" style="" ><br> 
-
-<a href="reserved" >
-<input type="submit" value="Reserver">
-</a> <br><br>
+<img width="400" height="250" src="images/studio.jpg" style="" >
+<br> <br> 
 
 M²: 36<br>
 Piece: 1<br>
 Prix loyer: 410<br>
-Reference: REF20168895<br>
+REF20168895<br>
 Description: Appartement style contemporain<br>
 <img width="400" height="250" class="photo" src="images/studio2.jpg"><br> 
-<a href="reserved" >
-<input type="submit" value="Reserver">
-</a><br><br>
+<br><br>
 
 M²: 36<br>
 Piece: 1<br>
 Prix loyer: 450<br>
-Reference: REF20168895<br>
+REF20168895<br>
 Description: Appartement style contemporain<br>
-<img width="400" height="250" class="photo" src="images/studio3.jpg"><br> <input type="submit" value="Reserver" /><br><br>
+<img width="400" height="250" class="photo" src="images/studio3.jpg"><br>
+<br><br>
 
-
-
-<a href="reserved" >
-    <form method="post" action="reserved">
-        <input type="submit" value="Reserver">
-    </form>
-</a>
 
 </body>
 </html>

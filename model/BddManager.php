@@ -82,6 +82,9 @@ class BddManager{
             for($i = 0; $i < count($appart); $i++){
                 $var = $appart[$i];
                 echo "<form action='detailService/".$var['id']."' method='post'>";
+                if ($var['locataire_id']==1){
+                    echo "appartement reservé<br><br>";
+                }
                 echo "categorie:<br>".$var['categorie']."<br><br>";
                 echo "titre:<br>".$var['titre']."<br><br>";
                 echo "description:<br>".$var['description']."<br><br>";
@@ -89,21 +92,39 @@ class BddManager{
                 echo "</form>";
                 echo "<form action='deleteService/".$var['id']."' method='post'><input type='submit' name='action' value='Delete'/></form>";
                 echo "</form>";
-                echo '<a href="reserved" >
-                        <form method="post" action="reservedservice/'.$var['id'].'">
-                            <input type="submit" value="Reserver">
-                        </form>
-                    </a>';
-                echo "<br>";
-                echo "<hr>";
+                if ($var['locataire_id']==0){
+                        echo'   <form method="post" action="reservedservice/'.$var['id'].'">
+                                    <input type="submit" value="Reserver">
+                               </form>';
+                               echo '<br>';
+                }
+                $comment=$this->getcommentannonce($var['id']);
+                if(!empty($comment)){
+
+                    for($y=0;$y<count($comment);$y++){
+                        echo 'Pseudo: '.$comment[$y]['username'];
+                        echo '<br><br>';
+                        echo 'Commentaire: '.$comment[$y]['commentaire'];
+                        echo '<br><br>';
+                    };                  
+
+                }
+                echo '<form action="commentaire_post/" method="post" >';
+                echo '<label for="username">Pseudo : </label> ';
+                echo '<input type="text" name="username" id="id" placeholder="Entrez votre pseudo..." maxlength="20" /><br />';
+                echo '<label for="commentaire">Commentaire : </label><textarea name="commentaire" id="commentaire" placeholder="Entrez un commentaire"></textarea><br />';
+                echo '<input type="submit" value="Envoyer" />';
+                echo '<input type="hidden" name="id" value="'.$var['id'].'">';
+                echo '</form>';
+                echo '<br>';
+                echo '<hr>';
     
             }
         
     }
 
     public function getAppartById($id){
-        $object = $this->connexion->prepare('SELECT *
-        FROM appartfinal WHERE id=:id');
+        $object = $this->connexion->prepare('SELECT * FROM appartfinal WHERE id=:id');
         $object->execute(array(
             'id'=>$id
         ));
@@ -205,11 +226,33 @@ class BddManager{
         $object = $this->connexion->prepare('UPDATE appartfinal SET locataire_id=:locataire_id WHERE id=:id');
         $object->execute(array(
             'id'=>$id,
-            'locataire_id'=>$user
+            'locataire_id'=>$user,
         ));
         $success = $object->rowCount();
         return $success;
     }
+
+
+    public function commentannonce($id, $username, $commentaire){
+        $object = $this->connexion->prepare('INSERT INTO comment SET annonce_id=:id, username=:username, commentaire=:commentaire');
+        $object->execute(array(
+            'id'=>$id,
+            'username'=>$username,
+            'commentaire'=>$commentaire,
+        ));
+        
+    }
+    
+    public function getcommentannonce($id){
+        $object = $this->connexion->prepare('SELECT * FROM comment WHERE annonce_id=:id');
+        $object->execute(array(
+            'id'=>$id,
+        ));
+        $user = $object->fetchAll(PDO::FETCH_ASSOC);
+        
+        return $user;
+    }
+   
 
 }
 

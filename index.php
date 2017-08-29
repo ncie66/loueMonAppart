@@ -150,7 +150,6 @@ Flight::route('POST /reservedservice/@id', function($id){
 
    if($success == 1){
     Flight::redirect('Acceuil');
-    "<script>javascript: alert('bravo !')></script>";
    } 
 
    else{
@@ -159,13 +158,15 @@ Flight::route('POST /reservedservice/@id', function($id){
     
 
 });
+Flight::route('POST /commentaire_post/', function(){
+
+    $com=new Commentaire_post();
+    $com->comment();
+    
+});
+
+
 
 Flight::start();
 
 ?>
-
-?>
-    echo"<script language=\"javascript\">"
-    echo"alert('Cette appartement est déjà reservé')";
-    echo"</script>";
-<?

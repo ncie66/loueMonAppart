@@ -17,7 +17,8 @@
       <li><a href="studio" > studio </a></li>
       <li><a href="f2" > Appartement F2 </a></li>
       <li><a href="f3" > Appartement F3 </a></li>
-      <li><a href="appluxe" > Appartement de Luxe </a></li>
+      <li><a href="appluxe" > Appartement/Villa </a></li>
+        <li><a href="profil" > Profil utilisateur</a></li>
   </ul>
 </div>
 
@@ -49,7 +50,7 @@ $user->displayprofil();
 
 
 
-<a href="http://localhost:8888/php/22_legrandfinal/Acceuil"> Retourner axux locations </a><br><br><br><br>
+<a href="http://localhost:8888/php/22_legrandfinal/Acceuil"> Retourner aux locations </a><br><br><br><br>
 
 <form action="decoservice" >
 

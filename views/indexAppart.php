@@ -9,6 +9,22 @@
     <title>MFA.com</title>
 </head>
 <body>
+<?php
+
+if( empty($_GET["message"])){
+
+}
+else{
+    if($_GET["message"]==true){
+       echo' <script> alert"Message envoyé"</script>';
+    }
+    else{
+        echo' <script> alert"Message non envoyé"</script>';
+    }
+}
+
+
+?>
 <hr/>
        <h1><div class="allo"><center> MonFuturAppart </center><div></h1>
 <hr/><br>
@@ -18,7 +34,7 @@
         <li><a href="studio" > studio </a></li>
         <li><a href="f2" > Appartement F2 </a></li>
         <li><a href="f3" > Appartement F3 </a></li>
-        <li><a href="appluxe" > Appartement de Luxe </a></li>
+        <li><a href="appluxe" > Appartement/Villa </a></li>
         <li><a href="profil" > Profil utilisateur</a></li>
     </ul>
 </div>
@@ -38,11 +54,13 @@
            <option value="Appartement F3">Appartement F3</option>
            <option value="Appartement de Luxe">Appartement de Luxe</option>
     </select><br><br>
-    <label>Titre:</label><br/><input class="taille" type="text" name="titre" rows="200" cols="50"/><br/><br>
-    <label>Description:</label><br/><textarea name="description" rows="10" cols="50"></textarea> <br>
+    <label>Titre:</label><br/><input class="taille" type="text" name="titre"  placeholder="Entrez votre titre ici" rows="200" cols="50"/><br/><br>
+    <label>Description:</label><br/><textarea name="description"  placeholder="Decrivez votre annonce... " rows="10" cols="50"></textarea> <br>
     <input type="submit" value="Envoyer" />
 </form>
 </center>
+
+
 <?php
 $bdd= new bddmanager;
 $appart=$bdd->getAllAppart();
